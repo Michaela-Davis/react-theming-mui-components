@@ -1,11 +1,6 @@
 import React from 'react';
-import { Box } from '@mui/system';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import { Container } from '@mui/material';
-import Link from '@mui/material/Link';
+import { Box, Button, Card, Container, Link, Typography } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 
 import designTokens from './design-tokens.json'
 
@@ -29,17 +24,20 @@ const theme = createTheme({
     },
     custom: {
       brandRed: designTokens.color.rocketRed,
-      backgroundColor: designTokens.color.white
+      backgroundColor: designTokens.color.white,
     },
   },
 
   typography: {
-    htmlFontSize: designTokens.typography.htmlFontSize,
     h1: {
       fontWeight: designTokens.typography.h1.fontWeight,
       fontSize: designTokens.typography.h1.fontSize,
       color: designTokens.color.lightTeal,
-    }
+    },
+    h3: {
+      fontSize: designTokens.typography.h3.fontSize,
+      color: designTokens.color.darkTeal,
+    },
   }
 });
 
@@ -49,15 +47,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Container sx={{
-        maxWidth: "false",
         backgroundColor: 'custom.backgroundColor',
       }}>
 
         <Box component="header" 
           sx={{ 
-            ml: "-33.3%",
-            mr: "-33.3%",
-            mt: "-1%",
             p: "2rem",
             backgroundColor: 'primary.dark',
           }}>
@@ -69,14 +63,61 @@ function App() {
           <Card></Card>
         </Box>
         
-        <Box component="footer">
-          <Button variant="contained" color="primary">
-            Main CTA (contained primary)
-          </Button>
-          <Link href="https://mui.com/material-ui/react-link/">React link</Link>
-          <Link href="https://rocketaccount.com/#/privacy-policy" color="secondary">Privacy Policy</Link>
-          <Link href="https://www.rocketcompanies.com/who-we-are/about-us/">About Us</Link>
+        {/** begin footer **/}
+        <Box component="footer"
+          sx={{
+            p: "2rem",
+            display: 'grid',
+            gap: 1,
+            gridTemplateColumns: 'repeat(4, 1fr)'
+          }}>
+          <div className="footer__column">            
+            <Button 
+              variant="contained" 
+              color="primary"   
+              onClick={() => {console.info("I'm a CTA button.");}}
+            >
+              Main Call to Action
+            </Button>
+          </div>
+
+          <Box className="footer__column"
+            sx={{
+              display: 'grid',
+              gap: 1,
+              gridTemplateRows: 'repeat(4, 1fr)'
+            }}>          
+            <Typography variant="h3">React</Typography>
+            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener">React link</Link>
+            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" underline="hover">React link</Link>
+            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" color="secondary">React link</Link>
+          </Box>
+
+          <Box className="footer__column"
+            sx={{
+              display: 'grid',
+              gap: 1,
+              gridTemplateRows: 'repeat(4, 1fr)'
+            }}>              
+            <Typography variant="h3">About Us</Typography>
+            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener">About Us</Link>
+            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" underline="hover">About Us</Link>
+            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" color="secondary">About Us</Link>
+          </Box>
+
+          <Box className="footer__column"
+            sx={{
+              display: 'grid',
+              gap: 1,
+              gridTemplateRows: 'repeat(4, 1fr)'
+            }}>               
+            <Typography variant="h3">Contact Us</Typography>
+            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener">Contact Us</Link>
+            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" underline="hover">Contact Us</Link>
+            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" color="secondary">Contact Us</Link>
+          </Box>
         </Box>
+        {/** end footer **/}
         
       </Container>
     </ThemeProvider>
