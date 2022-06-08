@@ -1,0 +1,15 @@
+{
+  "color": {
+    "rocketRed": "#c8102e",
+    "primaryBlack": "#000",
+    "primaryRed": "#ff0000",
+    "primaryYellow": "#ffff00",
+    "primaryGreen": "#00ff00",
+    "mainTeal": "#037c6e",
+    "lightTeal": "#28a99e",
+    "darkTeal": "#025043",
+    "mainPurple": "#6a359c",
+    "lightPurple": "#804fb3",
+    "darkPurple": "#552586"
+  }
+}
