@@ -11,5 +11,29 @@
     "mainPurple": "#6a359c",
     "lightPurple": "#804fb3",
     "darkPurple": "#552586"
+  },
+
+  "typography": {
+    "htmlFontSize": "16",
+    "fontSize": "12",
+    "fontWeightLight": "300",
+    "fontWeightRegular": "400",
+    "fontWeightMedium": "500",
+    "fontWeightBold": "700",
+
+    "h1": {
+      "fontWeight": "700",
+
+      "_comment": "MUI only supports REM font sizing for accessibilty reasons",
+      "fontSize": "3rem"
+    },
+
+    "h2": {
+      "fontWeight": "500"
+    },
+
+    "h3": {
+      "fontWeight": "500"
+    }
   }
 }

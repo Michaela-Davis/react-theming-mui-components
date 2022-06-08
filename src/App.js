@@ -2,7 +2,9 @@ import './App.css';
 import React from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
+import Link from '@mui/material/Link';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 import designTokens from './design-tokens.json'
 
 const theme = createTheme({
@@ -24,6 +26,14 @@ const theme = createTheme({
       contrastText: designTokens.color.primaryBlack,
     },
   },
+
+  typography: {
+    htmlFontSize: designTokens.typography.htmlFontSize,
+    h1: {
+      fontWeight: designTokens.typography.h1.fontWeight,
+      fontSize: designTokens.typography.h1.fontSize,
+    }
+  }
 });
 
 
@@ -31,9 +41,10 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <header className="App-header">
-          <h1>Michaela's React MUI Theming sample</h1>
+      <div>
+
+        <header>
+          <Typography variant="h1" align="center">Michaela's React MUI Theming sample</Typography>
         </header>
 
         <main>
@@ -44,9 +55,11 @@ function App() {
           <Button variant="contained" color="primary">
             Main CTA (contained primary)
           </Button>
-
-          
+          <Link href="https://mui.com/material-ui/react-link/">React link</Link>
+          <Link href="https://rocketaccount.com/#/privacy-policy" color="secondary">Privacy Policy</Link>
+          <Link href="https://www.rocketcompanies.com/who-we-are/about-us/">About Us</Link>
         </footer>
+        
       </div>
     </ThemeProvider>
   );
