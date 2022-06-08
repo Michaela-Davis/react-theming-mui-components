@@ -1,10 +1,12 @@
-import './App.css';
 import React from 'react';
+import { Box } from '@mui/system';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
+import { Container } from '@mui/material';
 import Link from '@mui/material/Link';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+
 import designTokens from './design-tokens.json'
 
 const theme = createTheme({
@@ -25,6 +27,10 @@ const theme = createTheme({
       dark: designTokens.color.rocketRed,
       contrastText: designTokens.color.primaryBlack,
     },
+    custom: {
+      brandRed: designTokens.color.rocketRed,
+      backgroundColor: designTokens.color.white
+    },
   },
 
   typography: {
@@ -32,6 +38,7 @@ const theme = createTheme({
     h1: {
       fontWeight: designTokens.typography.h1.fontWeight,
       fontSize: designTokens.typography.h1.fontSize,
+      color: designTokens.color.lightTeal,
     }
   }
 });
@@ -41,26 +48,37 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <Container sx={{
+        maxWidth: "false",
+        backgroundColor: 'custom.backgroundColor',
+      }}>
 
-        <header>
+        <Box component="header" 
+          sx={{ 
+            ml: "-33.3%",
+            mr: "-33.3%",
+            mt: "-1%",
+            p: "2rem",
+            backgroundColor: 'primary.dark',
+          }}>
           <Typography variant="h1" align="center">Michaela's React MUI Theming sample</Typography>
-        </header>
+        </Box>
 
-        <main>
+
+        <Box component="main">
           <Card></Card>
-        </main>
+        </Box>
         
-        <footer>
+        <Box component="footer">
           <Button variant="contained" color="primary">
             Main CTA (contained primary)
           </Button>
           <Link href="https://mui.com/material-ui/react-link/">React link</Link>
           <Link href="https://rocketaccount.com/#/privacy-policy" color="secondary">Privacy Policy</Link>
           <Link href="https://www.rocketcompanies.com/who-we-are/about-us/">About Us</Link>
-        </footer>
+        </Box>
         
-      </div>
+      </Container>
     </ThemeProvider>
   );
 }

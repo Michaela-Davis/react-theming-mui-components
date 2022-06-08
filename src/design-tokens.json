@@ -10,7 +10,8 @@
     "darkTeal": "#025043",
     "mainPurple": "#6a359c",
     "lightPurple": "#804fb3",
-    "darkPurple": "#552586"
+    "darkPurple": "#552586",
+    "white": "#fff"
   },
 
   "typography": {
