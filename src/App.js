@@ -69,53 +69,35 @@ function App() {
             p: "2rem",
             display: 'grid',
             gap: 1,
-            gridTemplateColumns: 'repeat(4, 1fr)'
-          }}>
-          <div className="footer__column">            
-            <Button 
-              variant="contained" 
-              color="primary"   
-              onClick={() => {console.info("I'm a CTA button.");}}
-            >
-              Main Call to Action
-            </Button>
-          </div>
-
-          <Box className="footer__column"
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateRows: 'repeat(4, 1fr)'
+          }}>          
+          <Button 
+            variant="contained" 
+            color="primary"   
+            onClick={() => {console.info("I'm a CTA button.");}}
             sx={{
-              display: 'grid',
-              gap: 1,
-              gridTemplateRows: 'repeat(4, 1fr)'
-            }}>          
-            <Typography variant="h3">React</Typography>
-            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener">React link</Link>
-            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" underline="hover">React link</Link>
-            <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" color="secondary">React link</Link>
-          </Box>
-
-          <Box className="footer__column"
-            sx={{
-              display: 'grid',
-              gap: 1,
-              gridTemplateRows: 'repeat(4, 1fr)'
-            }}>              
-            <Typography variant="h3">About Us</Typography>
-            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener">About Us</Link>
-            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" underline="hover">About Us</Link>
-            <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" color="secondary">About Us</Link>
-          </Box>
-
-          <Box className="footer__column"
-            sx={{
-              display: 'grid',
-              gap: 1,
-              gridTemplateRows: 'repeat(4, 1fr)'
-            }}>               
-            <Typography variant="h3">Contact Us</Typography>
-            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener">Contact Us</Link>
-            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" underline="hover">Contact Us</Link>
-            <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" color="secondary">Contact Us</Link>
-          </Box>
+              gridRow: '1 / -1',
+              alignSelf: 'start',
+              justifySelf: "start"
+            }}>
+            Main Call to Action
+          </Button>
+      
+          <Typography variant="h3" sx={{ gridColumn: '2'}}>React</Typography>
+          <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" sx={{ gridColumn: '2'}}>React link</Link>
+          <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" underline="hover" sx={{ gridColumn: '2'}}>React link</Link>
+          <Link href="https://mui.com/material-ui/react-link/" target="_blank" rel="noopener" color="secondary" sx={{ gridColumn: '2'}}>React link</Link>
+          
+          <Typography variant="h3" sx={{ gridColumn: '3', gridRow: '1'}}>About Us</Typography>
+          <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" sx={{ gridColumn: '3', gridRow: '2'}}>About Us</Link>
+          <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" underline="hover" sx={{ gridColumn: '3', gridRow: '3'}}>About Us</Link>
+          <Link href="https://www.rocketcompanies.com/who-we-are/about-us/" target="_blank" rel="noopener" color="secondary" sx={{ gridColumn: '3', gridRow: '4'}}>About Us</Link>
+            
+          <Typography variant="h3" sx={{ gridColumn: '4', gridRow: '1'}}>Contact Us</Typography>
+          <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" sx={{ gridColumn: '4', gridRow: '2'}}>Contact Us</Link>
+          <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" underline="hover" sx={{ gridColumn: '4', gridRow: '3'}}>Contact Us</Link>
+          <Link href="https://www.rocketcompanies.com/press-room/#Contact-Media-Relations" target="_blank" rel="noopener" color="secondary" sx={{ gridColumn: '4', gridRow: '4'}}>Contact Us</Link>
         </Box>
         {/** end footer **/}
         
