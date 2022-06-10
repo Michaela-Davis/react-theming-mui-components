@@ -15,6 +15,7 @@
   },
 
   "typography": {
+    "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
     "fontSize": "12",
     "fontWeightLight": "300",
     "fontWeightRegular": "400",
@@ -22,19 +23,27 @@
     "fontWeightBold": "700",
 
     "h1": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
       "fontWeight": "700",
 
       "_comment": "MUI only supports REM font sizing for accessibilty reasons",
-      "fontSize": "3rem"
+      "fontSize": "3rem",
+
+      "letterSpacing": "-0.01562em",
+      "lineHeight": "1.167"
     },
 
     "h2": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
       "fontWeight": "500"
     },
 
     "h3": {
+      "fontFamily": "'Roboto', 'Helvetica', 'Arial', sans-serif",
       "fontWeight": "500",
-      "fontSize": "1.5rem"
+      "fontSize": "1.5rem",
+      "letterSpacing": "0em",
+      "lineHeight": "1.167"
     }
   }
 }

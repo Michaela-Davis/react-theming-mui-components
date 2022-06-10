@@ -30,12 +30,18 @@ const theme = createTheme({
 
   typography: {
     h1: {
+      fontFamily: designTokens.typography.fontFamily,
       fontWeight: designTokens.typography.h1.fontWeight,
       fontSize: designTokens.typography.h1.fontSize,
+      letterSpacing: designTokens.typography.h1.letterSpacing,
+      lineHeight: designTokens.typography.h1.lineHeight,
       color: designTokens.color.lightTeal,
     },
     h3: {
+      fontFamily: designTokens.typography.fontFamily,
       fontSize: designTokens.typography.h3.fontSize,
+      letterSpacing: designTokens.typography.h3.letterSpacing,
+      lineHeight: designTokens.typography.h3.lineHeight,
       color: designTokens.color.darkTeal,
     },
   }
